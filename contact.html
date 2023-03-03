@@ -216,12 +216,13 @@
     
     <!--Google Sheets-->
 <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbya38DcPJ8H1cvk28202fn64RXglsrfd6PD5a7ojv7XaYxzwH1f/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwKUgSoPLNEa-7i7JTDbRXWvqpC3ezR2oClEod0Ow1zk3xaHXumwI3F0PSYKA_bkCxa/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
             })
 </script>
